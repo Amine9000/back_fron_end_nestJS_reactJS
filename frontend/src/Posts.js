@@ -14,7 +14,7 @@ export default function Posts() {
       .then((res) => res.json())
       .then((p) => setPosts(p))
       .catch((err) => console.log(err));
-  }, [posts]);
+  }, []);
   function handelDelete(postId) {
     const newPosts = posts.filter((post) => String(post.id) !== postId);
     fetch(`http://127.0.0.1:4000/posts/delete/${postId}`, {
