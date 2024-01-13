@@ -5,7 +5,7 @@ import { promises as fsPromises } from 'fs';
 @Injectable()
 export class DatabaseService {
   private readonly JSON_FILE_PATH =
-    '/home/amine/All/Lab/NestJs/first-app/src/database/database.json';
+    '/home/amine/All/Lab/NestJs/easy-nest-tp/backend/src/database/database.json';
   async getAllPosts(): Promise<Post[]> {
     const data = await fsPromises.readFile(this.JSON_FILE_PATH, 'utf8');
     return JSON.parse(data).posts as Post[];
