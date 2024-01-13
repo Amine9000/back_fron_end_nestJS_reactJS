@@ -6,7 +6,6 @@ import {
   Get,
   NotFoundException,
   Param,
-  ParseIntPipe,
   Post,
   Put,
   Query,
@@ -28,9 +27,7 @@ export class PostsController {
     return this.postsService.getOnePost(postId);
   }
   @Delete('delete/:postid')
-  async deleteOnePost(
-    @Param('postid', ParseIntPipe) postId: number,
-  ): Promise<Post> {
+  async deleteOnePost(@Param('postid') postId: number): Promise<Post> {
     return this.postsService.deleteOnePost(postId);
   }
   @Post('create')
